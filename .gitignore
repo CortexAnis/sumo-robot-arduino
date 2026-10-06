@@ -1,0 +1,14 @@
+# Arduino build files
+build/
+*.hex
+*.elf
+*.bin
+*.eep
+
+# OS and editor
+.vscode/
+.idea/
+.DS_Store
+
+# Temporary
+*.tmp
