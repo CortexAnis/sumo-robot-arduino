@@ -12,24 +12,21 @@ Ce dépôt contient le code pour le robot de combat "Robot_fight".
 1. Ouvrir `sumo_robot.ino` dans l'IDE Arduino.
 2. Programmer la carte (sélectionner le modèle et le port).
 
-## Publier sur GitHub
-Option A — via `gh` (GitHub CLI, authentifié) :
+## Explication du code
 
-```bash
-# crée un repo public à partir du dossier courant et pousse la branche main
-gh repo create --public --source=. --remote=origin --push
-```
+Ce dépôt contient le sketch principal `sumo_robot.ino` pour le robot de sumo.
 
-Option B — manuellement :
+Structure générale du code :
 
-```bash
-git remote add origin https://github.com/<votre-username>/<repo>.git
-git branch -M main
-git push -u origin main
-```
+- **Déclarations / constantes :** définition des broches (moteurs, capteurs), constantes de vitesse et de seuils.
+- **`setup()` :** initialise les broches, les communications série et toute calibration requise (capteurs, encodeurs).
+- **`loop()` :** boucle principale qui lit les capteurs, décide du comportement (détection d'adversaire, évitement de bord) et commande les moteurs.
+- **Fonctions utilitaires :** par exemple `readSensors()` pour lire capteurs infrarouges/ultrasons, `drive(left,right)` pour piloter les moteurs, `attack()` et `avoidEdge()` pour les stratégies.
 
-Remplacez `<votre-username>` et `<repo>` par vos valeurs.
+Comportement attendu :
 
----
+- Le robot surveille les capteurs frontaux pour localiser l'adversaire et se dirige vers lui.
+- Il utilise des capteurs de bord (ou capteurs de luminosité) pour détecter le bord de l'arène et reculer/éviter.
+- Les décisions de déplacement combinent lectures de capteurs et règles simples (ex. si adversaire à gauche -> tourner à gauche).
 
-Si vous voulez, je peux créer le dépôt distant pour vous (nécessite que vous soyez authentifié avec `gh`) ou je peux vous guider pour le faire manuellement.
+Pour toute précision (schéma de brochage, valeurs de seuil recommandées ou ajout d'images), dites-moi ce que vous souhaitez que j'ajoute au `README`.
