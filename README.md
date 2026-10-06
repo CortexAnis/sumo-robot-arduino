@@ -1,15 +1,15 @@
-# Robot_fight
+# Sumo Robot
 
-Projet Arduino: sketch principal `Robot_fight.ino`.
+Projet Arduino: sketch principal `sumo_robot.ino`.
 
 ## Description
 Ce dépôt contient le code pour le robot de combat "Robot_fight".
 
 ## Contenu
-- `Robot_fight.ino` : sketch Arduino principal.
+- `sumo_robot.ino` : sketch Arduino principal.
 
 ## Installer / Utilisation
-1. Ouvrir `Robot_fight.ino` dans l'IDE Arduino.
+1. Ouvrir `sumo_robot.ino` dans l'IDE Arduino.
 2. Programmer la carte (sélectionner le modèle et le port).
 
 ## Publier sur GitHub
